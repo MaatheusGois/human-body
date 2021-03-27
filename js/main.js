@@ -15,25 +15,34 @@ $(document).ready(function () {
         });
     });
 
-    function changeState(color) {
-        switch (color) {
-            case color1:
-                return color2
-            case "white":
-                return color2
-            case "none":
-                return color2
-
-            case color2:
-                return color3
-            case color3:
-                return color4
-            case color4:
-                return color5
-            case color5:
-                return color1
-            default:
-                return color
+    $("#signin").click(function () {
+        let name = $("#name").val()
+        if (name == "") {
+            messageErrorName()
+            return
         }
-    }
+        let frequency = $("#frequency").val()
+        let date = formattedDate()
+
+        Swal.fire({
+            title: 'Enviando a sua resposta...'
+        });
+        Swal.showLoading();
+        saveImage((imageId) => {
+            if (!imageId) {
+                messageErrorUploadImage()
+                return
+            }
+            const imageUrl = `https://br-upload-images.herokuapp.com/attachment/files/${imageId}`
+            // send email
+            const body = setupBody(name, frequency, date, imageUrl)
+            sendEmail(body, (response) => {
+                if (response.status == 201) {
+                    messageSuccess()
+                } else {
+                    messageErrorMessage()
+                }
+            })
+        })
+    });
 });

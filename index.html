@@ -40,7 +40,7 @@
 <body>
     <div class="main">
         <!-- Sing in  Form -->
-        <section class="mb-4">
+        <section class="mb-5">
             <div class="container">
                 <div class="signin-content">
                     <div class="signup-form">
@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                                 <p class="mb-2" for="frequency">Com que frequência você faz exercício fisico?</p>
-                                <select class="form-select" name="frequency" aria-label="Com que frequência você faz exercício fisico?">
+                                <select class="form-select" name="frequency" id="frequency" aria-label="Com que frequência você faz exercício fisico?">
                                     <option value="1x por semana" selected>1x por semana</option>
                                     <option value="2x por semana">2x por semana</option>
                                     <option value="3x por semana">3x por semana</option>
@@ -65,7 +65,7 @@
         </section>
 
         <!-- Sign up form -->
-        <section class="mb-3">
+        <section class="mb-4">
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="signup-image">
-                        <svg width="215" height="521" viewBox="0 0 215 521" fill="none"
+                        <svg version="1.1" id="editor" viewBox="0 0 215 521" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M52 277C52.5952 264.831 55.5 246 55.5 246C55.5 246 88.3676 249.58 109.5 249.5C129.463 249.424 160.5 246 160.5 246C160.5 246 163.515 263.603 164 275C164.482 286.322 163.5 300.5 163.5 300.5C163.5 300.5 146.265 307.414 136.5 307.5C124.894 307.603 109 302.5 109 302.5L108 287L106.5 302.5C106.5 302.5 90.8394 307.57 80.5 307.5C69.0845 307.423 52 301 52 301C52 301 51.5421 286.361 52 277Z"
@@ -289,13 +289,19 @@
                 </div>
             </div>
         </section>
+        <div class="canvas" hidden></div>
     </div>
 
     <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/3.0.7/umd.min.js" integrity="sha512-/s6CoG5ITB6327e5PitHYHqmw+XS9ynpBQ0RJtDEHjGnqld6e4V6F5Up+Q+IuavD4Na4vfmKAkuanctzsiMA2Q==" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
 
+    <script src="js/email.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/errors.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
