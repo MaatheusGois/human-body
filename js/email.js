@@ -2,7 +2,7 @@ function sendEmail(html, callback) {
     const body = {
         "from": "mackenzie.fisio@gmail.com",
         "to": [
-          "matheusgoislimasilva@gmail.com"
+          "joanagam00@gmail.com"
         ],
         "subject": "Nova avaliação",
         "text": "Mais um pasciente respondeu seu questionário.",
