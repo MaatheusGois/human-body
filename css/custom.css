@@ -1,4 +1,27 @@
+/* Variables */
+
+
+:root {
+    --color1: #FFFFFF;
+    --color2: #F7D9DE;
+    --color3: #F3B9B3;
+    --color4: #F19894;
+    --color5: #ED7175;
+}
+  
 svg {
     width: 100%;
     height: 100%;
+}
+
+.custom-collum {
+    width: 100px;
+    height: 20px;
+    border-radius: 12px;
+}
+
+table {
+    border-spacing: 15px !important;
+    /* margin-left: -15px; */
+    border-collapse: inherit;
 }
