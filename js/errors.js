@@ -10,6 +10,15 @@ function messageErrorName() {
     )
 }
 
+function messageErrorAge() {
+    Swal.close()
+    Swal.fire(
+        'Opsss',
+        'Preencha sua idade!',
+        'error'
+    )
+}
+
 function messageErrorUploadImage() {
     Swal.close()
     Swal.fire(

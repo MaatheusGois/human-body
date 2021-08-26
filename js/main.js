@@ -21,6 +21,12 @@ $(document).ready(function () {
             messageErrorName()
             return
         }
+        let age = $("#age").val()
+        if (age == "") {
+            messageErrorAge()
+            return
+        }
+        let sex = $("#sex").val()
         let frequency = $("#frequency").val()
         let date = formattedDate()
 
@@ -35,7 +41,8 @@ $(document).ready(function () {
             }
             const imageUrl = `https://br-upload-images.herokuapp.com/attachment/files/${imageId}`
             // send email
-            const body = setupBody(name, frequency, date, imageUrl)
+            const body = setupBody(name, age, sex, frequency, date, imageUrl)
+            console.log(body)
             sendEmail(body, (response) => {
                 if (response.status == 201) {
                     messageSuccess()
