@@ -39,7 +39,7 @@ $(document).ready(function () {
                 messageErrorUploadImage()
                 return
             }
-            const imageUrl = `https://br-upload-images.herokuapp.com/attachment/files/${imageId}`
+            const imageUrl = `https://br-face-images.herokuapp.com/attachment/files/${imageId}`
             // send email
             const body = setupBody(name, age, sex, frequency, date, imageUrl)
             console.log(body)

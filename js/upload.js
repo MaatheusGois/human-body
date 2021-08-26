@@ -23,10 +23,10 @@ function uploadImage(pngBase64, callback) {
     // 'fileimage' é o campo que o 'multer' procura o arquivo de imagem.
     formData.append("file", blob);
 
-    axios.post("https://br-upload-images.herokuapp.com/attachment/files", formData, {
-    headers: {
-        "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
-    }
+    axios.post("https://br-face-images.herokuapp.com/attachment/files", formData, {
+        headers: {
+            "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
+        }
     }).then(response => callback(response));
 }
 
@@ -39,7 +39,7 @@ function uploadImage(pngBase64, callback) {
  * @see http://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript
  * @return Blob
  */
- function b64toBlob(b64Data, contentType, sliceSize) {
+function b64toBlob(b64Data, contentType, sliceSize) {
     contentType = contentType || '';
     sliceSize = sliceSize || 512;
 
@@ -59,6 +59,6 @@ function uploadImage(pngBase64, callback) {
         byteArrays.push(byteArray);
     }
 
-  var blob = new Blob(byteArrays, {type: contentType});
-  return blob;
+    var blob = new Blob(byteArrays, { type: contentType });
+    return blob;
 }
