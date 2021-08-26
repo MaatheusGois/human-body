@@ -9,9 +9,10 @@ function sendEmail(html, callback) {
     "html": html,
     "auth": {
       "user": "mackenzie.fisio@gmail.com",
-      "pass": "kormet-typzEb-2jidny"
+      "pass": "ouiiytroombobcmf"
     }
   }
+  console.log(body)
   axios.post("https://br-microservice-mail.herokuapp.com/emails", body).then(response => callback(response));
 }
 
